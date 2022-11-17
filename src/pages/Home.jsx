@@ -1,64 +1,60 @@
 import React from 'react'
-import { BsCurrencyDollar } from 'react-icons/bs';
-
-import { Button, } from '../components';
-import { earningData } from '../data/dummy';
-import { useStateContext } from '../contexts/ ContextProvider';
+import { CircularProgressbar } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
+import { sumaryBar} from '../data/dummy';
+//import { useStateContext } from '../contexts/ ContextProvider';
 
 const Home = () => {
-const { currentColor, } = useStateContext();
+//const { currentColor, } = useStateContext();
 
   return (
-    <div className="mt-20">
-    <div className="flex flex-wrap lg:flex-nowrap m-3 justify-center ">
-     
-     <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-44 rounded-xl w-full lg:w-80 p-8 pt-9 m-3 bg-hero-pattern bg-no-repeat bg-cover bg-center">
-        <div className="flex justify-between items-center">
-          <div>
-            <p className="font-bold text-gray-400">Earnings</p>
-            <p className="text-2xl">$63,448.78</p>
-          </div>
-          <button
-            type="button"
-            style={{ backgroundColor: currentColor }}
-            className="text-2xl opacity-0.9 text-white hover:drop-shadow-xl rounded-full  p-4"
-          >
-            <BsCurrencyDollar />
-          </button>
-        </div>
-        <div className="mt-6">
-          <Button
-            color="white"
-            bgColor={currentColor}
-            text="Download"
-            borderRadius="10px"
-          />
-        </div>
-      </div>
-      
-      <div className="flex flex-wrap justify-center gap-1 items-center">
-        {earningData.map((item) => (
-          <div key={item.title} className="bg-white h-44 dark:text-gray-200 dark:bg-secondary-dark-bg md:w-50  p-4 pt-9 rounded-2xl ">
+<div className="mt-20">
+    
+  <div className="flex flex-wrap lg:flex-nowrap m-3 justify-center gap-2 ">
+        {sumaryBar.map((item) => (
+    <div key={item.title} className="  bg-white h-44 dark:text-gray-200 dark:bg-secondary-dark-bg md:w-50  p-4 pt-9 rounded-2xl w-full hover:drop-shadow-xl ">
             <button
               type="button"
               style={{ color: item.iconColor, backgroundColor: item.iconBg }}
-              className="text-2xl opacity-0.9 rounded-full  p-4 hover:drop-shadow-xl"
+              className="text-2xl opacity-0.9 rounded-full  p-4 pt-0 hover:drop-shadow-xl"
             >
               {item.icon}
             </button>
-            <p className="mt-3">
-              <span className="text-lg font-semibold">{item.amount}</span>
-              <span className={`text-sm text-${item.pcColor} ml-2`}>
-                {item.percentage}
-              </span>
+
+        <div className='flex justify-between items-center'>
+          <div className=''>
+            <p className="mt-1">
+              <span className='text-green-600 font-extrabold'>{item.value}</span>
             </p>
-            <p className="text-sm text-gray-400  mt-1">{item.title}</p>
+            <p className=" font-bold text-gray-400  mt-1">{item.title}</p>
           </div>
-        ))}
-      </div>
+          <div style={{ width: 130, height: 130, marginTop: -40 }}>
+            <CircularProgressbar value={item.percent}  text={`${item.percent}%`}
+              styles={{
+                trail: {
+                  transform: 'rotate(-135deg)',
+                  transformOrigin: 'center center',
+                  strokeWidth: 2,
+                },
+
+                path: {
+                  transform: 'rotate(-135deg)',
+                  transformOrigin: 'center center',
+                  stroke: "#34ccfc",
+                  strokeWidth: 5,
+                }
+              }}
+            />
+          </div>
+       </div>     
+
     </div>
 
+        ))}
   </div>
+       
+
+</div>
 );
 };
 

@@ -44,7 +44,7 @@ const { currentColor, currentMode } = useStateContext();
           />
         </div>
       </div>
-      <div className="flex flex-wrap justify-center gap-1 items-center">
+      <div className="flex flex-wrap pl-10 file:justify-center gap-1 items-center">
         {earningData.map((item) => (
           <div key={item.title} className="bg-white h-44 dark:text-gray-200 dark:bg-secondary-dark-bg md:w-50  p-4 pt-9 rounded-2xl ">
             <button

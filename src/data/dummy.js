@@ -5,7 +5,7 @@ import { BsKanban, BsBarChart, BsBoxSeam, BsCurrencyDollar, BsShield, BsChatLeft
 import { BiColorFill } from 'react-icons/bi';
 import { IoMdContacts } from 'react-icons/io';
 import { RiContactsLine, RiStockLine } from 'react-icons/ri';
-import { MdOutlineSupervisorAccount } from 'react-icons/md';
+import { MdOutlineSupervisorAccount, MdAddShoppingCart, MdTableView, MdInventory, MdRequestQuote } from 'react-icons/md';
 import { HiOutlineRefresh } from 'react-icons/hi';
 import { TiTick } from 'react-icons/ti';
 import { GiLouvrePyramid } from 'react-icons/gi';
@@ -45,29 +45,41 @@ export const gridOrderStatus = (props) => (
 
 export const sumaryBar = [
   {
-    title: 'Sales',
-    subtitle: 'Total sales today',
-    value: '$1.000',
+    icon: <MdAddShoppingCart />,
+    title: 'Vendas',
+    value: 'R$: 5.500',
+    iconColor: '#03C9D7',
+    iconBg: '#E5FAFB',
+    pcColor: 'red-600',
     percent: 70
 },
 {
-    title: 'Orders',
-    subtitle: 'Total orders today',
-    value: '3000',
-    percent: 49
-},
-{
-    title: 'Revenue',
-    subtitle: 'Total revenue today',
-    value: '$678',
+  icon: <MdTableView />,
+    title: 'Receitas',
+    value: 'R$: 8.300',
+    iconColor: 'rgb(0, 194, 146)',
+    iconBg: 'rgb(235, 250, 242)',
+    pcColor: 'red-600',
     percent: 38
 },
 {
-    title: 'Visits',
-    subtitle: 'Total visits today',
-    value: '2345',
+  icon: <MdRequestQuote />,
+    title: 'Despesas',
+    value: 'R$: - 4.400',
+    iconColor: 'rgb(228, 106, 118)',
+    iconBg: 'rgb(255, 244, 229)',
+    pcColor: 'green-600',
     percent: 55
-}
+},
+{
+  icon: <MdInventory/>,
+    title: 'Pedidos',
+    value: '180',
+    iconColor: 'rgb(255, 244, 229)',
+    iconBg: 'rgb(254, 201, 15)',
+    pcColor: 'green-600',
+    percent: 49
+},
 ];
 
 export const kanbanGrid = [
@@ -620,6 +632,9 @@ export const chatData = [
     message: 'Roman Joined the Team!',
     desc: 'Congratulate him',
     time: '9:08 AM',
+    iconColor: '#03C9D7',
+    iconBg: '#E5FAFB',
+    pcColor: 'red-600',
   },
   {
     image:
@@ -627,6 +642,9 @@ export const chatData = [
     message: 'New message received',
     desc: 'Salma sent you new message',
     time: '11:56 AM',
+    iconColor: 'rgb(255, 244, 229)',
+    iconBg: 'rgb(254, 201, 15)',
+    pcColor: 'green-600',
   },
   {
     image:
@@ -634,6 +652,10 @@ export const chatData = [
     message: 'New Payment received',
     desc: 'Check your earnings',
     time: '4:39 AM',
+    title: 'Sales',
+    iconColor: 'rgb(228, 106, 118)',
+    iconBg: 'rgb(255, 244, 229)',
+    pcColor: 'green-600',
   },
   {
     image:
@@ -641,6 +663,9 @@ export const chatData = [
     message: 'Jolly completed tasks',
     desc: 'Assign her new tasks',
     time: '1:12 AM',
+    iconColor: 'rgb(0, 194, 146)',
+    iconBg: 'rgb(235, 250, 242)',
+    pcColor: 'red-600',
   },
 ];
 
