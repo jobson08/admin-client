@@ -60,7 +60,7 @@ export const sumaryBar = [
     iconColor: 'rgb(0, 194, 146)',
     iconBg: 'rgb(235, 250, 242)',
     pcColor: 'red-600',
-    percent: 38
+    percent: 50
 },
 {
   icon: <MdRequestQuote />,

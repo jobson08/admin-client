@@ -3,7 +3,7 @@ import {ScheduleComponent, Day, Week, WorkWeek, Month, Agenda, Inject, DragAndDr
 //import { DatePickerComponent} from '@syncfusion/ej2-react-calendars';
 
 import { scheduleData } from '../data/dummy'
-import { Header } from '../components';
+import { Header } from '../components/Expor';
 
 const Calendar = () => {
   return (

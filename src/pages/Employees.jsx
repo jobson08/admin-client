@@ -1,7 +1,7 @@
 import React from 'react'
 import { GridComponent, Inject, ColumnsDirective, ColumnDirective, Search, Page } from '@syncfusion/ej2-react-grids';
 import { employeesData, employeesGrid } from '../data/dummy';
-import { Header } from '../components';
+import { Header } from '../components/Expor';
 
 const Employees = () => {
   const toolbarOptions = ['Search'];

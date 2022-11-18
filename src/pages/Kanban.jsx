@@ -2,7 +2,7 @@ import React from 'react'
 import { KanbanComponent, ColumnDirective, ColumnsDirective} from '@syncfusion/ej2-react-kanban';
 
 import { kanbanData,kanbanGrid} from "../data/dummy";
-import { Header } from '../components';
+import { Header } from '../components/Expor';
 
 const Kanban = () => {
   return (

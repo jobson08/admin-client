@@ -1,7 +1,7 @@
 import React from 'react'
 import { GridComponent, Inject, ColumnsDirective, ColumnDirective, Page, Selection, Edit, Toolbar, Sort, Filter } from '@syncfusion/ej2-react-grids';
 import { customersData, customersGrid } from '../data/dummy';
-import { Header } from '../components';
+import { Header } from '../components/Expor';
 
 const Customers = () => {
   const selectionsettings = { persistSelection: true };
