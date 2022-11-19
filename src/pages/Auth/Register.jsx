@@ -1,8 +1,11 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react'
+import React, { useState } from 'react'
+import { RiEyeFill, RiEyeOffFill, RiLockFill, RiMailFill, RiUser3Fill } from 'react-icons/ri'
+import { Link } from 'react-router-dom'
 
 const Register = () => {
+  const [showPassword, setShouPassword] = useState(false)
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
   <div className="flex flex-col items-center justify-center bg-gray-100 rounded-tl-lg rounded-bl-lg p-4">
@@ -11,7 +14,7 @@ const Register = () => {
     </div>
     <div className="flex flex-col items-center gap-8">
       <h1 className="text-4xl font-bold text-gray-900">Bem Vindo</h1>
-      <button className="flex items-center gap-2 bg-gray-200 py-2 px-4 rounded-lg">
+      <button className="flex items-center gap-2 bg-gray-200 py-2 px-4 rounded-lg hover:drop-shadow-xl transition-colors">
         <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
             <g>
                 <path fill="none" d="M0 0h24v24H0z"></path>
@@ -28,58 +31,85 @@ const Register = () => {
     </div>
     <div className="w-full mb-8">
       <form>
-        <div className="flex justify-center mb-6">
-          <input
-            type="text"
-            className="w-full max-w-md py-2 px-4 rounded-lg outline-none"
-            placeholder="Nome completo"
-          />
-        </div>
-        <div className="flex justify-center mb-4">
-          <input
-            type="email"
-            className="w-full max-w-md py-2 px-4 rounded-lg outline-none"
-            placeholder="Email"
-          />
-        </div>
-        <div className="flex justify-center mb-6">
-          <input
-            type="password"
-            className="w-full max-w-md py-2 px-4 rounded-lg outline-none"
-            placeholder="Senha"
-          />
-        </div>
-       {/**
-        * <div className="w-full max-w-md mx-auto flex justify-end items-center text-gray-500 mb-8">
-          <a
-            href="#"
-            className="hover:underline hover:text-gray-900 transition-all"
-          >
-            ¿Olvidaste tu password?
-          </a>
-        </div>
-        *  */} 
-        <div className="w-full max-w-md mx-auto">
-          <button
-            type="submit"
-            className="w-full bg-gray-200 py-2 px-4 rounded-lg text-gray-900 hover:bg-gray-300 transition-colors"
-          >
-            Criar comta
-          </button>
-        </div>
+      <div className='p-8 pt-1'>
+          <div className="relative mb-4">
+          <RiUser3Fill  className='absolute top-1/2 -translate-y-1/2 left-2'/>
+            <input
+              type="text"
+              className="py-2 pl-8 pr-4 w-full outline-none rounded-lg"
+              placeholder="Nome completo"
+            />
+          </div>
+          <div className="relative mb-4">
+          <RiMailFill  className='absolute top-1/2 -translate-y-1/2 left-2'/>
+            <input
+              type="email"
+              className="py-2 pl-8 pr-4 w-full outline-none rounded-lg"
+              placeholder="Emtre com Email"
+            />
+          </div>
+
+          <div className="relative mb-6">
+          <RiLockFill className='absolute top-1/2 -translate-y-1/2 left-2'/>
+            <input
+              type={showPassword ? "text":"password"}
+              className="py-2 px-8 w-full outline-none rounded-lg"
+              placeholder="Senha"
+              />             
+              {showPassword ? (
+                <RiEyeOffFill
+                 onClick={() => setShouPassword(!showPassword)}
+                 className='absolute top-1/2 -translate-y-1/2 right-2 hover:cursor-pointer'
+                />
+              ) : (
+                <RiEyeFill
+                  onClick={()=> setShouPassword(!showPassword)}
+                className='absolute top-1/2 -translate-y-1/2 right-2 hover:cursor-pointer'
+                />  
+              )} 
+          </div>
+          <div className="relative mb-6">
+          <RiLockFill className='absolute top-1/2 -translate-y-1/2 left-2'/>
+            <input
+              type={showPassword ? "text":"password"}
+              className="py-2 px-8 w-full outline-none rounded-lg"
+              placeholder="Comfirmar Senha"
+              />             
+              {showPassword ? (
+                <RiEyeOffFill
+                 onClick={() => setShouPassword(!showPassword)}
+                 className='absolute top-1/2 -translate-y-1/2 right-2 hover:cursor-pointer'
+                />
+              ) : (
+                <RiEyeFill
+                  onClick={()=> setShouPassword(!showPassword)}
+                className='absolute top-1/2 -translate-y-1/2 right-2 hover:cursor-pointer'
+                />  
+              )}
+         
+          </div>
+          <div className="w-full max-w-md mx-auto">
+            <button
+              type="submit"
+              className="w-full bg-gray-300 py-2 px-4 rounded-lg text-gray-900 hover:drop-shadow-xl transition-colors"
+            >
+              Salvar registro
+            </button>
+          </div>
+          </div>
       </form>
     </div>
     <div>
-      <span className="text-gray-500">
-        Entre com sua conta?{" "}
-        <a
-          href="#"
-          className="text-gray-900 hover:underline transition-all"
-        >
-         Entrar
-        </a>
-      </span>
-    </div>
+        <span className="text-gray-500">
+         Entre com sua conta {" "}
+          <Link
+           to="/"
+            className="text-gray-900 hover:underline transition-all"
+          >
+            Entrar
+          </Link>
+        </span>
+      </div>
   </div>
   <div className="hidden lg:flex items-center justify-center border-t border-r border-b rounded-tr-lg rounded-br-lg">
   <img src='register2.jpg' className="w-full object-cover"/>

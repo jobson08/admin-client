@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/alt-text */
 import React, { useState } from 'react'
+import { Link} from 'react-router-dom';
 import { RiEyeFill, RiEyeOffFill, RiLockFill, RiMailFill } from 'react-icons/ri'
 
 
@@ -80,7 +81,7 @@ const Login = () => {
               type="submit"
               className="w-full bg-gray-300 py-2 px-4 rounded-lg text-gray-900 hover:drop-shadow-xl transition-colors"
             >
-              Iniciar sesión
+              Iniciar sessão
             </button>
           </div>
           </div>
@@ -89,12 +90,12 @@ const Login = () => {
       <div>
         <span className="text-gray-500">
           Criar uma conta {" "}
-          <a
-            href="#"
+          <Link
+           to='register'
             className="text-gray-900 hover:underline transition-all"
           >
             Registrar
-          </a>
+          </Link>
         </span>
       </div>
     </div>
