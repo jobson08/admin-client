@@ -69,7 +69,7 @@ export const sumaryBar = [
     iconColor: 'rgb(228, 106, 118)',
     iconBg: 'rgb(255, 244, 229)',
     pcColor: 'green-600',
-    percent: 55
+    percent: 34
 },
 {
   icon: <MdInventory/>,
