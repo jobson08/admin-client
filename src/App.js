@@ -2,7 +2,7 @@
 import  React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import { Ecommerce, Orders, Calendar, Employees, Stacked, Pyramid, Customers, Kanban, Line, Area, Bar, Pie, Financial, ColorPicker, ColorMapping, Editor, Home, Login, Register, Error } from './pages/Expor';
+import { Ecommerce, Orders, Calendar, Employees, Stacked, Pyramid, Customers, Kanban, Line, Area, Bar, Pie, Financial, ColorPicker, ColorMapping, Editor, Home, Login, Register, Error, ForgetPassword } from './pages/Expor';
 
 import './App.css';
 import LayoutAdmin from './Layouts/LayoutAdmin';
@@ -14,6 +14,7 @@ const App = () => {
         <Routes>              
               <Route path="/" element={(<Login />)} />
               <Route path="/register" element={(<Register />)}/>
+              <Route path="/forget" element={(<ForgetPassword />)}/>
               {/* dashboard  */}
           <Route path="/" element={(<LayoutAdmin/>)} >
               <Route path='/home' element={(<Home />)} />

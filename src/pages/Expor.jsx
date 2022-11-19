@@ -17,4 +17,5 @@ export { default as Pyramid } from './Charts/Pyramid';
 export { default as Stacked } from './Charts/Stacked';
 export { default as Login } from './Auth/Login';
 export { default as Register } from './Auth/Register';
+export { default as ForgetPassword} from './Auth/ForgetPassword';
 export { default as Error } from './Error';
