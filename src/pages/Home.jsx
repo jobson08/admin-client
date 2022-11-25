@@ -22,7 +22,10 @@ const { currentColor,currentMode } = useStateContext();
 return (
 <div className="mt-20 m-2 md:m-15 p-2 md:p-5 bg-half-transparent rounded-3xl">
     {/*TEMPORIZADOR */}
-
+   <div className=' bg-white  dark:bg-secondary-dark-bg p-8 rounded-xl'>
+    <h1 className='text-xl dark:text-gray-200 '> Dezembro</h1>
+    <hr className=' my-5 border-gray-100'/>
+  </div> 
 
         {/*CARD */}
   <div className="flex flex-wrap lg:flex-nowrap m-3 justify-center gap-2 ">
@@ -40,11 +43,14 @@ return (
         <div className='flex justify-between items-center'>
           <div className=''>
             <p className="mt-1">
-              <span className='text-green-600 font-extrabold'>{item.value}</span>
+              <span className='dark:text-gray-200  text-xl font-extrabold'>{item.value}</span>
             </p>
+            <span className={`text-sm text-${item.pcColor} ml-2`}>
+                {item.percentage}
+              </span>
             <p className=" font-bold text-gray-400  mt-1">{item.title}</p>
           </div>
-          <div style={{ width: 130, height: 130, marginTop: -40 }}>
+          <div style={{ width: 110, height: 110, marginTop: -40 }}>
             <CircularProgressbar value={item.percent}  text={`${item.percent}%`}
               styles={{
                 trail: {
@@ -56,7 +62,7 @@ return (
                 path: {
                   transform: 'rotate(-135deg)',
                   transformOrigin: 'center center',
-                  stroke: "#34ccfc",
+                  stroke: "#34ccfc", 
                   strokeWidth: 5,
                 }
               }}

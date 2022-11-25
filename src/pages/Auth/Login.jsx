@@ -69,7 +69,7 @@ const Login = () => {
             </div>
             <div>
             <Link
-           to='forget'
+           to='/forget'
             className="text-blue-500 hover:underline transition-all"
           >
             Esquceu a Senha?
@@ -91,7 +91,7 @@ const Login = () => {
         <span className="text-gray-500">
           Criar uma conta {" "}
           <Link
-           to='register'
+           to='/register'
             className=" text-blue-500 hover:underline transition-all"
           >
             Registrar

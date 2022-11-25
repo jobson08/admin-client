@@ -44,41 +44,46 @@ export const gridOrderStatus = (props) => (
 );
 
 export const sumaryBar = [
+ 
+  {
+    icon: <MdTableView />,
+      title: 'Receitas',
+      value: 'R$: 8.300',
+      percentage: '+38%',
+      iconColor: 'rgb(0, 194, 146)',
+      iconBg: 'rgb(235, 250, 242)',
+      pcColor: 'green-600',
+      percent: 50
+  },
   {
     icon: <MdAddShoppingCart />,
     title: 'Vendas',
     value: 'R$: 5.500',
+    percentage: '+45%',
     iconColor: '#03C9D7',
     iconBg: '#E5FAFB',
-    pcColor: 'red-600',
-    percent: 70
-},
-{
-  icon: <MdTableView />,
-    title: 'Receitas',
-    value: 'R$: 8.300',
-    iconColor: 'rgb(0, 194, 146)',
-    iconBg: 'rgb(235, 250, 242)',
-    pcColor: 'red-600',
-    percent: 50
-},
-{
-  icon: <MdRequestQuote />,
-    title: 'Despesas',
-    value: 'R$: - 4.400',
-    iconColor: 'rgb(228, 106, 118)',
-    iconBg: 'rgb(255, 244, 229)',
     pcColor: 'green-600',
-    percent: 34
+    percent: 70
 },
 {
   icon: <MdInventory/>,
     title: 'Pedidos',
     value: '180',
+    percentage: '-2%',
     iconColor: 'rgb(255, 244, 229)',
     iconBg: 'rgb(254, 201, 15)',
-    pcColor: 'green-600',
+    pcColor: 'red-600',
     percent: 49
+},
+{
+  icon: <MdRequestQuote />,
+    title: 'Despesas',
+    value: 'R$: - 4.400',
+    percentage: '-20%',
+    iconColor: 'rgb(228, 106, 118)',
+    iconBg: 'rgb(255, 244, 229)',
+    pcColor: 'red-600',
+    percent: 34
 },
 ];
 
@@ -695,7 +700,6 @@ export const earningData = [
     title: 'Sales',
     iconColor: 'rgb(228, 106, 118)',
     iconBg: 'rgb(255, 244, 229)',
-
     pcColor: 'green-600',
   },
   {
@@ -735,7 +739,6 @@ export const recentTransactions = [
     desc: 'Money reversed',
     iconColor: 'rgb(255, 244, 229)',
     iconBg: 'rgb(254, 201, 15)',
-
     pcColor: 'green-600',
   },
   {
@@ -743,7 +746,6 @@ export const recentTransactions = [
     amount: '+$350',
     title: 'Bank Transfer',
     desc: 'Money Added',
-
     iconColor: 'rgb(228, 106, 118)',
     iconBg: 'rgb(255, 244, 229)',
     pcColor: 'green-600',
@@ -902,25 +904,34 @@ export const themeColors = [
   },
 ];
 
+export const userLogData =[
+  {
+    image: avatar,
+    name:'Michael Roberts',
+    cargo: 'administrador',
+    emeil:'info@administrador'
+  }
+]
+
 export const userProfileData = [
   {
     icon: <BsCurrencyDollar />,
-    title: 'My Profile',
-    desc: 'Account Settings',
+    title: 'Meu Perfil',
+    desc: 'Comfiguraçães da conta',
     iconColor: '#03C9D7',
     iconBg: '#E5FAFB',
   },
   {
     icon: <BsShield />,
-    title: 'My Inbox',
-    desc: 'Messages & Emails',
+    title: 'Minha caixa de entrada',
+    desc: 'Mensagens e E-mails',
     iconColor: 'rgb(0, 194, 146)',
     iconBg: 'rgb(235, 250, 242)',
   },
   {
     icon: <FiCreditCard />,
-    title: 'My Tasks',
-    desc: 'To-do and Daily Tasks',
+    title: 'Mihas tarefas',
+    desc: 'Tarefas pendentes e diarias',
     iconColor: 'rgb(255, 244, 229)',
     iconBg: 'rgb(254, 201, 15)',
   },

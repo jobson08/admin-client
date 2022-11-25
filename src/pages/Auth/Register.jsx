@@ -73,7 +73,7 @@ const Register = () => {
             <input
               type={showPassword ? "text":"password"}
               className="py-2 px-8 w-full outline-none rounded-lg"
-              placeholder="Comfirmar Senha"
+              placeholder="Confirmar Senha"
               />             
               {showPassword ? (
                 <RiEyeOffFill
