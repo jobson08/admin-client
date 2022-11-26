@@ -7,8 +7,10 @@ import { Button, Pie, SparkLine, Stacked } from '../components/Expor';
 import { DropDownListComponent } from '@syncfusion/ej2-react-dropdowns';
 import { useStateContext } from '../contexts/ ContextProvider';
 import { GoPrimitiveDot } from 'react-icons/go';
+import { AiFillCaretLeft, AiFillCaretRight } from 'react-icons/ai';
 
 import { sumaryBar, ecomPieChartData, SparklineAreaData, dropdownData} from '../data/dummy';
+
 
 const DropDown = ({ currentMode }) => (
   <div className="w-28 border-1 border-color px-2 py-1 rounded-md">
@@ -21,11 +23,30 @@ const { currentColor,currentMode } = useStateContext();
 
 return (
 <div className="mt-20 m-2 md:m-15 p-2 md:p-5 bg-half-transparent rounded-3xl">
-    {/*TEMPORIZADOR */}
-   <div className=' bg-white  dark:bg-secondary-dark-bg p-8 rounded-xl'>
-    <h1 className='text-xl dark:text-gray-200 '> Dezembro</h1>
-    <hr className=' my-5 border-gray-100'/>
-  </div> 
+   
+ {/*TEMPORIZADOR */}
+<div className=' bg-white  dark:bg-secondary-dark-bg p-5 rounded-xl'>
+
+  <div className='flex flex-wrap lg:flex-nowrap m-3 justify-center '>
+    <button 
+     type="button" 
+     style={{ backgroundColor: currentColor }}  
+     className="text-2xl hover:drop-shadow-xl text-white rounded-full p-3">
+   <AiFillCaretLeft />
+  </button>
+
+    <h1 className='text-1xl font-extrabold dark:text-gray-200 text-center m-2'> Dezembro de 2022</h1>
+
+    <button 
+     type="button" 
+     style={{ backgroundColor: currentColor }}  
+     className="text-2xl hover:drop-shadow-xl text-white rounded-full p-3">
+    <AiFillCaretRight />
+    </button>
+  </div>
+ 
+    {/*<hr className=' my-5 border-gray-100'/>*/}
+</div> 
 
         {/*CARD */}
   <div className="flex flex-wrap lg:flex-nowrap m-3 justify-center gap-2 ">
