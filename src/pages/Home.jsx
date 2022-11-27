@@ -3,13 +3,13 @@ import React from 'react'
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
-import { Button, Pie, SparkLine, Stacked } from '../components/Expor';
+import { Button, Pie, SparkLine, Stacked, Pie as PieChart } from '../components/Expor';
 import { DropDownListComponent } from '@syncfusion/ej2-react-dropdowns';
 import { useStateContext } from '../contexts/ ContextProvider';
 import { GoPrimitiveDot } from 'react-icons/go';
 import { AiFillCaretLeft, AiFillCaretRight } from 'react-icons/ai';
 
-import { sumaryBar, ecomPieChartData, SparklineAreaData, dropdownData} from '../data/dummy';
+import { sumaryBar, ecomPieChartData, SparklineAreaData, dropdownData, pieChartData} from '../data/dummy';
 
 
 const DropDown = ({ currentMode }) => (
@@ -25,7 +25,7 @@ return (
 <div className="mt-20 m-2 md:m-15 p-2 md:p-5 bg-half-transparent rounded-3xl">
    
  {/*TEMPORIZADOR */}
-<div className=' bg-white  dark:bg-secondary-dark-bg p-5 rounded-xl'>
+  <div className='bg-white  dark:bg-secondary-dark-bg p-5 rounded-xl'>
 
   <div className='flex flex-wrap lg:flex-nowrap m-3 justify-center '>
     <button 
@@ -46,13 +46,13 @@ return (
   </div>
  
     {/*<hr className=' my-5 border-gray-100'/>*/}
-</div> 
+    </div> 
 
         {/*CARD */}
-  <div className="flex flex-wrap lg:flex-nowrap m-3 justify-center gap-2 ">
+      <div className="flex flex-wrap lg:flex-nowrap m-3 justify-center gap-2 ">
 
         {sumaryBar.map((item) => (
-    <div key={item.title} className="  bg-white h-44 dark:text-gray-200 dark:bg-secondary-dark-bg md:w-50  p-4 pt-9 rounded-2xl w-full hover:drop-shadow-xl ">
+        <div key={item.title} className="  bg-white h-44 dark:text-gray-200 dark:bg-secondary-dark-bg md:w-50  p-4 pt-9 rounded-2xl w-full hover:drop-shadow-xl ">
             <button
               type="button"
               style={{ color: item.iconColor, backgroundColor: item.iconBg }}
@@ -61,8 +61,8 @@ return (
               {item.icon}
             </button>
 
-        <div className='flex justify-between items-center'>
-          <div className=''>
+          <div className='flex justify-between items-center'>
+            <div className=''>
             <p className="mt-1">
               <span className='dark:text-gray-200  text-xl font-extrabold'>{item.value}</span>
             </p>
@@ -88,101 +88,43 @@ return (
                 }
               }}
             />
-      </div>
-    </div>     
+        </div>
+      </div>     
+    </div>
+     ))}       
   </div>
-  ))}       
-</div>
 
-    {/*Revenue Updates */}
-    <div className="flex gap-10 flex-wrap justify-center">
-      <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl md:w-780  ">
-        <div className="flex justify-between">
-          <p className="font-semibold text-xl">Revenue Updates</p>
-          <div className="flex items-center gap-4">
-            <p className="flex items-center gap-2 text-gray-600 hover:drop-shadow-xl">
-              <span>
-                <GoPrimitiveDot />
-              </span>
-              <span>Expense</span>
-            </p>
-            <p className="flex items-center gap-2 text-green-400 hover:drop-shadow-xl">
-              <span>
-                <GoPrimitiveDot />
-              </span>
-              <span>Budget</span>
-            </p>
-          </div>
+       {/*Despesas por categoria */}
+  <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl  ">
+        <div className="flex justify-center">
+          <p className="font-semibold text-xl">Despesas por categoria</p>
         </div>
-        <div className="mt-10 flex gap-10 flex-wrap justify-center">
-          <div className=" border-r-1 border-color m-4 pr-10">
-            <div>
-              <p>
-                <span className="text-3xl font-semibold">$93,438</span>
-                <span className="p-1.5 hover:drop-shadow-xl cursor-pointer rounded-full text-white bg-green-400 ml-3 text-xs">
-                  23%
-                </span>
-              </p>
-              <p className="text-gray-500 mt-1">Budget</p>
-            </div>
-            <div className="mt-8">
-              <p className="text-3xl font-semibold">$48,487</p>
 
-              <p className="text-gray-500 mt-1">Expense</p>
-            </div>
+        <div className="full">
+            <PieChart id="chart-pie" data={pieChartData} legendVisiblity height="full" />
+          </div>
+      </div>
 
-            <div className="mt-5">
-              <SparkLine currentColor={currentColor} id="line-sparkLine" type="Line" height="80px" width="250px" data={SparklineAreaData} color={currentColor} />
-            </div>
-            <div className="mt-10">
-              <Button
-                color="white"
-                bgColor={currentColor}
-                text="Download Report"
-                borderRadius="10px"
-              />
-            </div>
-          </div>
-          <div>
-            <Stacked currentMode={currentMode} width="320px" height="360px" />
-          </div>
-        </div>
+{/*Fluco de caixas */}
+    <div  className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl ">
+      <div className="flex justify-center">
+          <p className="font-semibold text-xl">Fluxo de caixa</p>
       </div>
       <div>
+            <Stacked currentMode={currentMode}  height="full" />
+          </div>       
+  </div>
 
-    {/*EARINGS */}
-    <div
-          className=" rounded-2xl md:w-400 p-4 m-3"
-          style={{ backgroundColor: currentColor }}
-        >
-          <div className="flex justify-between items-center ">
-            <p className="font-semibold text-white text-2xl">Earnings</p>
-
-            <div>
-              <p className="text-2xl text-white font-semibold mt-8">$63,448.78</p>
-              <p className="text-gray-200">Monthly revenue</p>
-            </div>
-          </div>
-
-          <div className="mt-4">
-            <SparkLine currentColor={currentColor} id="column-sparkLine" height="100px" type="Column" data={SparklineAreaData} width="320" color="rgb(242, 252, 253)" />
-          </div>
+{/*Comparativo */}
+  <div  className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl">
+      <div className="flex justify-center">
+          <p className="font-semibold text-xl">comparativo</p>
         </div>
-
-        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl md:w-400 p-8 m-3 flex justify-center items-center gap-10">
-          <div>
-            <p className="text-2xl font-semibold ">$43,246</p>
-            <p className="text-gray-400">Yearly sales</p>
-          </div>
-
-          <div className="w-40">
-            <Pie id="pie-chart" data={ecomPieChartData} legendVisiblity={false} height="160px" />
-        </div>
-      </div>
-    </div>
   </div>
 
 </div>
+
+
 );
 };
 
