@@ -1,7 +1,7 @@
 import React from 'react';
 import { AiOutlineCalendar, AiOutlineShoppingCart, AiOutlineAreaChart, AiOutlineBarChart, AiOutlineStock, AiFillShop } from 'react-icons/ai';
 import { FiShoppingBag, FiEdit, FiPieChart, FiBarChart, FiCreditCard, FiStar, FiShoppingCart } from 'react-icons/fi';
-import { BsKanban, BsBarChart, BsBoxSeam, BsCurrencyDollar, BsShield, BsChatLeft } from 'react-icons/bs';
+import { BsKanban, BsBarChart, BsBoxSeam, BsCurrencyDollar, BsShield, BsChatLeft, BsCashCoin, BsXOctagonFill } from 'react-icons/bs';
 import { BiColorFill } from 'react-icons/bi';
 import { IoMdContacts } from 'react-icons/io';
 import { RiContactsLine, RiStockLine } from 'react-icons/ri';
@@ -70,7 +70,7 @@ export const sumaryBar = [
     title: 'Pedidos',
     value: '180',
     percentage: '-2%',
-    iconColor: 'rgb(255, 244, 229)',
+    iconColor: 'rgb(168, 7, 90, 0.8)',
     iconBg: 'rgb(254, 201, 15)',
     pcColor: 'red-600',
     percent: 49
@@ -710,6 +710,81 @@ export const earningData = [
     iconColor: 'rgb(0, 194, 146)',
     iconBg: 'rgb(235, 250, 242)',
     pcColor: 'red-600',
+  },
+];
+
+export const recentTransactionsData = [
+  {
+    id:1,
+    icon: <BsCashCoin />,
+    amount: 'R$: 128,00+',
+    title: 'Luiz ',
+    category: 'Fabrica',
+    desc: 'Entrada',
+    dat: '02/12/2021',
+    iconColor: 'rgb(0, 194, 146)',
+    iconBg: '#E5FAFB',
+    pcColor: 'green-600',
+  },
+  {
+    id:2,
+    icon: <BsXOctagonFill />,
+    amount: 'R$: 185,00-',
+    title: 'Margarina',
+    category: 'Fabrica',
+    desc: 'Saida',
+    dat: '01/12/2021',
+    iconColor: '#EC2300',
+    iconBg: '#E5FAFB',
+    pcColor: 'red-600',
+  },
+  {
+    id:3,
+    icon: <BsCashCoin />,
+    amount: 'R$: 72,00+',
+    title: 'Sony',
+    category: 'Fabrica',
+    desc: 'Entrada',
+    dat: '01/12/2021',
+    iconColor: 'rgb(0, 194, 146)',
+    iconBg: '#E5FAFB',
+    pcColor: 'green-600',
+  },
+  {
+    id:4,
+    icon: <BsCashCoin />,
+    amount: 'R$: 155,00+',
+    title: 'valor tarde ',
+    category: 'Padaria',
+    desc: 'Entrada',
+    dat: '01/12/2021',
+    iconColor: 'rgb(0, 194, 146)',
+    iconBg: '#E5FAFB',
+    pcColor: 'green-600',
+  },
+  {
+    id:5,
+    icon: <BsXOctagonFill />,
+    amount: 'R$: 185,00-',
+    title: 'queijo',
+    category: 'Padaria',
+    desc: 'Saida',
+    dat: '01/12/2021',
+    iconColor: '#EC2300',
+    iconBg: '#E5FAFB',
+    pcColor: 'red-600',
+  },
+  {
+    id:6,
+    icon: <BsCashCoin />,
+    amount: 'R$: 80,00+',
+    title: 'valor manha ',
+    category: 'Padaria',
+    desc: 'Entrada',
+    dat: '01/12/2021',
+    iconColor: 'rgb(0, 194, 146)',
+    iconBg: '#E5FAFB',
+    pcColor: 'green-600',
   },
 ];
 
@@ -3186,14 +3261,15 @@ export const lineCustomSeries = [
 ];
 
 export const pieChartData = [
-  { x: 'Labour', y: 18, text: '18%' },
-  { x: 'Legal', y: 8, text: '8%' },
-  { x: 'Production', y: 15, text: '15%' },
+  { x: 'venda', y: 18, text: '18%' },
+  { x: 'produção', y: 8, text: '8%' },
+  { x: 'despesas', y: 15, text: '15%' },
   { x: 'License', y: 11, text: '11%' },
   { x: 'Facilities', y: 18, text: '18%' },
   { x: 'Taxes', y: 14, text: '14%' },
   { x: 'Insurance', y: 16, text: '16%' },
 ];
+
 
 export const contextMenuItems = [
   'AutoFit',

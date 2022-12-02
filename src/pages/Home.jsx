@@ -3,13 +3,14 @@ import React from 'react'
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
-import { Button, Pie, SparkLine, Stacked, Pie as PieChart } from '../components/Expor';
+import { Button, Pie, SparkLine, Stacked, Pie as PieChart, LineChart } from '../components/Expor';
 import { DropDownListComponent } from '@syncfusion/ej2-react-dropdowns';
 import { useStateContext } from '../contexts/ ContextProvider';
 import { GoPrimitiveDot } from 'react-icons/go';
 import { AiFillCaretLeft, AiFillCaretRight } from 'react-icons/ai';
 
-import { sumaryBar, ecomPieChartData, SparklineAreaData, dropdownData, pieChartData} from '../data/dummy';
+import { sumaryBar, ecomPieChartData, SparklineAreaData, dropdownData, pieChartData, recentTransactions, recentTransactionsData} from '../data/dummy';
+import { Link } from 'react-router-dom';
 
 
 const DropDown = ({ currentMode }) => (
@@ -55,8 +56,8 @@ return (
         <div key={item.title} className="  bg-white h-44 dark:text-gray-200 dark:bg-secondary-dark-bg md:w-50  p-4 pt-9 rounded-2xl w-full hover:drop-shadow-xl ">
             <button
               type="button"
-              style={{ color: item.iconColor, backgroundColor: item.iconBg }}
-              className="text-2xl opacity-0.9 rounded-full  p-4 pt-0 hover:drop-shadow-xl"
+              style={{ color: item.iconColor}}
+              className="text-3xl "
             >
               {item.icon}
             </button>
@@ -95,18 +96,42 @@ return (
   </div>
 
        {/*Despesas por categoria */}
-  <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl  ">
+ <div className='grid grid-cols-1 md:grid-cols-2 '>
+   <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl  ">
         <div className="flex justify-center">
           <p className="font-semibold text-xl">Despesas por categoria</p>
         </div>
 
-        <div className="full">
-            <PieChart id="chart-pie" data={pieChartData} legendVisiblity height="full" />
+        <div className="full justify-center">
+            <PieChart id="chart-pie" data={pieChartData} legendVisiblity height="200px" />
+        </div>
+        <div>
+            <Link to="/" className="md:text-xl hover:text-blue-400 transition-colors" >
+              Ver mais
+            </Link>
           </div>
       </div>
 
+      <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl  ">
+        <div className="flex justify-center">
+          <p className="font-semibold text-xl">Receita por categoria</p>
+        </div>
+
+        <div className="full justify-center">
+            <Pie id="pie-chart" data={ecomPieChartData} legendVisiblity height="200px" />
+          </div>
+          <div>
+            <Link to="/" className="md:text-xl hover:text-blue-400 transition-colors" >
+              Ver mais
+            </Link>
+          </div>
+      </div>
+  </div>      
+ 
+
 {/*Fluco de caixas */}
-    <div  className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl ">
+<div className='grid grid-cols-1 md:grid-cols-2 '>
+      <div  className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl ">
       <div className="flex justify-center">
           <p className="font-semibold text-xl">Fluxo de caixa</p>
       </div>
@@ -114,6 +139,53 @@ return (
             <Stacked currentMode={currentMode}  height="full" />
           </div>       
   </div>
+  
+  <div className="flex gap-10 m-4 flex-wrap justify-center">
+      <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg p-6 rounded-2xl">
+        <div className="flex justify-between items-center gap-2">
+          <p className="text-xl font-semibold">Transações recentes</p>
+          <DropDown currentMode={currentMode} />
+        </div>
+        <div className="mt-10 w-72 md:w-400">
+          { recentTransactionsData.map((item) => (
+            <div key={item.id} className="flex justify-between mt-4">
+              <div className="flex gap-4">
+                <button
+                  type="button"
+                  style={{
+                    color: item.iconColor,
+                    backgroundColor: item.iconBg,
+                  }}
+                  className="text-14 rounded-lg p-4 hover:drop-shadow-xl"
+                >
+                  {item.icon}
+                </button>
+                <div>
+                  <p className="text-md font-semibold">{item.title}</p>
+                  <p className="text-sm text-gray-400">{item.desc}</p>
+                </div>
+              </div>
+              <p className={`text-${item.pcColor}`}>{item.amount}</p>
+              <p className=" txt-sm">{item.dat}</p>
+            </div>
+          ))}
+        </div>
+        <div className="flex justify-between items-center mt-5 border-t-1 border-color">
+          <div className="mt-3">
+            <Button
+              color="white"
+              bgColor={currentColor}
+              text="Add"
+              borderRadius="10px"
+            />
+          </div>
+
+          <p className="text-gray-400 text-sm">36 Transações recentes</p>
+        </div>
+      </div>
+    </div>
+</div>
+
 
 {/*Comparativo */}
   <div  className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl">
