@@ -1,16 +1,15 @@
 /* eslint-disable no-unused-vars */
-import React from 'react'
+import React, {useState} from 'react'
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-
-import { Button, Pie, SparkLine, Stacked, Pie as PieChart, LineChart } from '../components/Expor';
+import { Button, Pie, Stacked, Pie as PieChart, Tabe} from '../components/Expor';
 import { DropDownListComponent } from '@syncfusion/ej2-react-dropdowns';
 import { useStateContext } from '../contexts/ ContextProvider';
-import { GoPrimitiveDot } from 'react-icons/go';
-import { AiFillCaretLeft, AiFillCaretRight } from 'react-icons/ai';
+import { AiFillCaretLeft, AiFillCaretRight, AiFillAlert } from 'react-icons/ai';
 
-import { sumaryBar, ecomPieChartData, SparklineAreaData, dropdownData, pieChartData, recentTransactions, recentTransactionsData} from '../data/dummy';
+import { sumaryBar, ecomPieChartData, dropdownData, pieChartData, recentTransactionsData} from '../data/dummy';
 import { Link } from 'react-router-dom';
+import { BsBoxArrowInRight } from 'react-icons/bs';
 
 
 const DropDown = ({ currentMode }) => (
@@ -18,7 +17,6 @@ const DropDown = ({ currentMode }) => (
     <DropDownListComponent id="time" fields={{ text: 'Time', value: 'Id' }} style={{ border: 'none', color: (currentMode === 'Dark') && 'white' }} value="1" dataSource={dropdownData} popupHeight="220px" popupWidth="120px" />
   </div>
 );
-
 const Home = () => {
 const { currentColor,currentMode } = useStateContext();
 
@@ -63,7 +61,7 @@ return (
             </button>
 
           <div className='flex justify-between items-center'>
-            <div className=''>
+            <div>
             <p className="mt-1">
               <span className='dark:text-gray-200  text-xl font-extrabold'>{item.value}</span>
             </p>
@@ -101,17 +99,17 @@ return (
         <div className="flex justify-center">
           <p className="font-semibold text-xl">Despesas por categoria</p>
         </div>
-
+{/*Despesas por categoria */}
         <div className="full justify-center">
             <PieChart id="chart-pie" data={pieChartData} legendVisiblity height="200px" />
         </div>
         <div>
-            <Link to="/" className="md:text-xl hover:text-blue-400 transition-colors" >
-              Ver mais
+        <Link to="/" className="flex items-center md:text-xl hover:text-blue-400 transition-colors" >
+            Ver mais <BsBoxArrowInRight/> 
             </Link>
           </div>
       </div>
-
+{/*Receitas por categoria */}
       <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl  ">
         <div className="flex justify-center">
           <p className="font-semibold text-xl">Receita por categoria</p>
@@ -121,8 +119,8 @@ return (
             <Pie id="pie-chart" data={ecomPieChartData} legendVisiblity height="200px" />
           </div>
           <div>
-            <Link to="/" className="md:text-xl hover:text-blue-400 transition-colors" >
-              Ver mais
+            <Link to="/" className="flex items-center md:text-xl hover:text-blue-400 transition-colors" >
+            Ver mais <BsBoxArrowInRight/> 
             </Link>
           </div>
       </div>
@@ -139,8 +137,8 @@ return (
             <Stacked currentMode={currentMode}  height="full" />
           </div>       
   </div>
-  
-  <div className="flex gap-10 m-4 flex-wrap justify-center">
+  {/*Transações recentes*/}
+  <div className="flex gap-10 m-2 flex-wrap justify-center">
       <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg p-6 rounded-2xl">
         <div className="flex justify-between items-center gap-2">
           <p className="text-xl font-semibold">Transações recentes</p>
@@ -163,11 +161,13 @@ return (
                 <div>
                   <p className="text-md font-semibold">{item.title}</p>
                   <p className="text-sm text-gray-400">{item.desc}</p>
+                  <p className="text-xs text-gray-400">{item.desc}</p>
                 </div>
               </div>
               <p className={`text-${item.pcColor}`}>{item.amount}</p>
               <p className=" txt-sm">{item.dat}</p>
             </div>
+            
           ))}
         </div>
         <div className="flex justify-between items-center mt-5 border-t-1 border-color">
@@ -179,8 +179,7 @@ return (
               borderRadius="10px"
             />
           </div>
-
-          <p className="text-gray-400 text-sm">36 Transações recentes</p>
+          <Link to="/" className="flex items-center md:text-xl hover:text-blue-400 transition-colors">36 Transações recentes</Link>
         </div>
       </div>
     </div>
@@ -191,7 +190,11 @@ return (
   <div  className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl">
       <div className="flex justify-center">
           <p className="font-semibold text-xl">comparativo</p>
-        </div>
+        </div>     
+        <div>
+          <Tabe />
+        </div>           
+        
   </div>
 
 </div>

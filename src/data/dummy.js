@@ -717,7 +717,7 @@ export const recentTransactionsData = [
   {
     id:1,
     icon: <BsCashCoin />,
-    amount: 'R$: 128,00+',
+    amount: 'R$: 128,00 +',
     title: 'Luiz ',
     category: 'Fabrica',
     desc: 'Entrada',
@@ -729,7 +729,7 @@ export const recentTransactionsData = [
   {
     id:2,
     icon: <BsXOctagonFill />,
-    amount: 'R$: 185,00-',
+    amount: 'R$: 185,00 -',
     title: 'Margarina',
     category: 'Fabrica',
     desc: 'Saida',
@@ -741,7 +741,7 @@ export const recentTransactionsData = [
   {
     id:3,
     icon: <BsCashCoin />,
-    amount: 'R$: 72,00+',
+    amount: 'R$: 72,00 +',
     title: 'Sony',
     category: 'Fabrica',
     desc: 'Entrada',
@@ -753,7 +753,7 @@ export const recentTransactionsData = [
   {
     id:4,
     icon: <BsCashCoin />,
-    amount: 'R$: 155,00+',
+    amount: 'R$: 155,00 +',
     title: 'valor tarde ',
     category: 'Padaria',
     desc: 'Entrada',
@@ -765,7 +765,7 @@ export const recentTransactionsData = [
   {
     id:5,
     icon: <BsXOctagonFill />,
-    amount: 'R$: 185,00-',
+    amount: 'R$: 185,00 -',
     title: 'queijo',
     category: 'Padaria',
     desc: 'Saida',
@@ -777,7 +777,7 @@ export const recentTransactionsData = [
   {
     id:6,
     icon: <BsCashCoin />,
-    amount: 'R$: 80,00+',
+    amount: 'R$: 80,00 +',
     title: 'valor manha ',
     category: 'Padaria',
     desc: 'Entrada',
