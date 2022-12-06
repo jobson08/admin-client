@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { Tab } from '@headlessui/react'
-import { Link } from 'react-router-dom'
+//import { Link } from 'react-router-dom'
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -8,7 +8,7 @@ function classNames(...classes) {
 
 const Tabe = () => {
     let [categories] = useState({
-        Recent: [
+        Saidas: [
           {
             id: 1,
             title: 'Does drinking coffee make you smarter?',
@@ -24,7 +24,7 @@ const Tabe = () => {
             shareCount: 2,
           },
         ],
-        Popular: [
+        Entradas: [
           {
             id: 1,
             title: 'Is tech making coffee better or worse?',
@@ -40,7 +40,7 @@ const Tabe = () => {
             shareCount: 12,
           },
         ],
-        Trending: [
+       Resultados: [
           {
             id: 1,
             title: 'Ask Me Anything: 10 answers to your questions about coffee',
@@ -58,9 +58,11 @@ const Tabe = () => {
         ],
       })
   return (
-    <div className="w-full max-w-md px-2 py-16 sm:px-0">
+
+   <div className="w-full max-w-md px-2 py-16 sm:px-0">
     <Tab.Group>
-      <Tab.List className="flex space-x-1 rounded-xl bg-blue-900/20 p-1">
+    
+   <Tab.List className="flex space-x-1 rounded-xl bg-blue-900/20 p-1">
         {Object.keys(categories).map((category) => (
           <Tab
             key={category}
@@ -83,17 +85,17 @@ const Tabe = () => {
           <Tab.Panel
             key={idx}
             className={classNames(
-              'rounded-xl bg-white p-3',
+              'rounded-xl bg-slate-200 p-3 ',
               'ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2'
             )}
           >
-            <ul>
+            <ul className='grid grid-cols-2'>
               {posts.map((post) => (
                 <li
                   key={post.id}
                   className="relative rounded-md p-3 hover:bg-gray-100"
                 >
-                  <h3 className="text-sm font-medium leading-5">
+                  <h3 className="text-sm font-bold text-black leading-5">
                     {post.title}
                   </h3>
 
@@ -105,13 +107,14 @@ const Tabe = () => {
                     <li>{post.shareCount} shares</li>
                   </ul>
 
-                  <Link
+                 {/* <Link
                     href="#"
                     className={classNames(
                       'absolute inset-0 rounded-md',
                       'ring-blue-400 focus:z-10 focus:outline-none focus:ring-2'
                     )}
-                  />
+                    /> */}
+                 
                 </li>
               ))}
             </ul>
@@ -119,7 +122,7 @@ const Tabe = () => {
         ))}
       </Tab.Panels>
     </Tab.Group>
-  </div>
+  </div> 
   )
 }
 

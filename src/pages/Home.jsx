@@ -10,6 +10,7 @@ import { AiFillCaretLeft, AiFillCaretRight, AiFillAlert } from 'react-icons/ai';
 import { sumaryBar, ecomPieChartData, dropdownData, pieChartData, recentTransactionsData} from '../data/dummy';
 import { Link } from 'react-router-dom';
 import { BsBoxArrowInRight } from 'react-icons/bs';
+import ProgressBar from '../components/ProgressBar';
 
 
 const DropDown = ({ currentMode }) => (
@@ -161,7 +162,7 @@ return (
                 <div>
                   <p className="text-md font-semibold">{item.title}</p>
                   <p className="text-sm text-gray-400">{item.desc}</p>
-                  <p className="text-xs text-gray-400">{item.desc}</p>
+                  <p className="text-xs text-gray-400">{item.category}</p>
                 </div>
               </div>
               <p className={`text-${item.pcColor}`}>{item.amount}</p>
@@ -187,15 +188,24 @@ return (
 
 
 {/*Comparativo */}
-  <div  className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl">
-      <div className="flex justify-center">
+<div className='gflex flex-wrap lg:flex-nowrap m-3 justify-center '>
+ <div  className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-2 rounded-2xl">
+    <div className="flex justify-center">
           <p className="font-semibold text-xl">comparativo</p>
-        </div>     
-        <div>
-          <Tabe />
-        </div>           
-        
-  </div>
+    </div>     
+      <div className='bg-white m-20' >
+         <div>
+         <p className="text-md font-semibold text-black">Despesas</p>
+          <ProgressBar />
+         </div>
+         <div>
+         <p className="text-md font-semibold text-black">Receitas</p>
+          <ProgressBar />
+         </div>
+          
+      </div>   
+  </div>          
+ </div>
 
 </div>
 
