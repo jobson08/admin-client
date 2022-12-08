@@ -10,7 +10,9 @@ import { AiFillCaretLeft, AiFillCaretRight, AiFillAlert } from 'react-icons/ai';
 import { sumaryBar, ecomPieChartData, dropdownData, pieChartData, recentTransactionsData} from '../data/dummy';
 import { Link } from 'react-router-dom';
 import { BsBoxArrowInRight } from 'react-icons/bs';
-import ProgressBar from '../components/ProgressBar';
+//import ProgressBar from '../components/ProgressBar';
+import { Progress } from 'react-sweet-progress';
+import "react-sweet-progress/lib/style.css";
 
 
 const DropDown = ({ currentMode }) => (
@@ -188,21 +190,35 @@ return (
 
 
 {/*Comparativo */}
-<div className='gflex flex-wrap lg:flex-nowrap m-3 justify-center '>
+<div className='lg:flex-nowrap m-3 justify-center '>
  <div  className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-2 rounded-2xl">
     <div className="flex justify-center">
           <p className="font-semibold text-xl">comparativo</p>
     </div>     
-      <div className='bg-white m-20' >
-         <div>
-         <p className="text-md font-semibold text-black">Despesas</p>
-          <ProgressBar />
+
+    <div>
+      <div className='mb-5'>
+          <div className='flex justify-between '>
+            <p className="text-md font-semibold ">Receitas</p>
+            <p className="text-md font-semibold ">R$5.800,00 / 9.00,00</p>
+          </div>
+         <Progress
+        percent={70}
+         status="success"
+        />
+         <p className="text-sm font-normal text-gray-500 flex justify-end ">Resta R$ 3.200,00</p>
          </div>
-         <div>
-         <p className="text-md font-semibold text-black">Receitas</p>
-          <ProgressBar />
-         </div>
-          
+         <div className='mb-5'>
+         <div className='flex justify-between '>
+            <p className="text-md font-semibold ">Despeas</p>
+            <p className="text-md font-semibold ">R$ 2.300,00 / 5.500,00</p>
+          </div>
+         <Progress
+        percent={40}
+         status="error"
+        />
+        <p className="text-sm font-normal text-gray-500 flex justify-end ">Resta R$ 3.200,00</p>
+         </div>  
       </div>   
   </div>          
  </div>

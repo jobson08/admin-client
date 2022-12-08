@@ -8,12 +8,8 @@ const ProgressBar = () => {
     <div className="flex flex-col w-full">
         <div>
         <Progress
-        percent={69}
-    theme={{
-        success: {
-        color: 'rgb(223, 105, 180)'
-        }
-      }}
+        percent={70}
+         status="error"
 />
 
        </div> 
