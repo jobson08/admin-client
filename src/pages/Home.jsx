@@ -1,8 +1,9 @@
 /* eslint-disable no-unused-vars */
 import React, {useState} from 'react'
+import { Button, Pie, Stacked, Pie as PieChart, Tabe} from '../components/Expor';
+import { Transactions } from '../pages/Expor'
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-import { Button, Pie, Stacked, Pie as PieChart, Tabe} from '../components/Expor';
 import { DropDownListComponent } from '@syncfusion/ej2-react-dropdowns';
 import { useStateContext } from '../contexts/ ContextProvider';
 import { AiFillCaretLeft, AiFillCaretRight, AiFillAlert } from 'react-icons/ai';
@@ -24,7 +25,7 @@ const Home = () => {
 const { currentColor,currentMode } = useStateContext();
 
 return (
-<div className="mt-20 m-2 md:m-15 p-2 md:p-5 bg-half-transparent rounded-3xl">
+<div className="mt-20 m-2 md:m-15 p-2 md:p-5  rounded-3xl">
    
  {/*TEMPORIZADOR */}
   <div className='bg-white  dark:bg-secondary-dark-bg p-5 rounded-xl'>
@@ -182,7 +183,7 @@ return (
               borderRadius="10px"
             />
           </div>
-          <Link to="/" className="flex items-center md:text-xl hover:text-blue-400 transition-colors">36 Transações recentes</Link>
+          <Link to="/transactions" className="flex items-center md:text-xl hover:text-blue-400 transition-colors">36 Transações recentes</Link>
         </div>
       </div>
     </div>
@@ -193,7 +194,7 @@ return (
 <div className='lg:flex-nowrap m-3 justify-center '>
  <div  className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-2 rounded-2xl">
     <div className="flex justify-center">
-          <p className="font-semibold text-xl">comparativo</p>
+          <p className="font-semibold text-xl">Comparativo</p>
     </div>     
 
     <div>
@@ -219,7 +220,12 @@ return (
         />
         <p className="text-sm font-normal text-gray-500 flex justify-end ">Resta R$ 3.200,00</p>
          </div>  
-      </div>   
+         <div>
+            <Link to="/" className="flex items-center md:text-xl hover:text-blue-400 transition-colors" >
+            Ver mais <BsBoxArrowInRight/> 
+            </Link>
+          </div>
+      </div>    
   </div>          
  </div>
 
