@@ -1,4 +1,5 @@
 import React from 'react';
+import { format } from 'date-fns';
 import { AiOutlineCalendar, AiOutlineShoppingCart, AiOutlineAreaChart, AiOutlineBarChart, AiOutlineStock, AiFillShop } from 'react-icons/ai';
 import { FiShoppingBag, FiEdit, FiPieChart, FiBarChart, FiCreditCard, FiStar, FiShoppingCart } from 'react-icons/fi';
 import { BsKanban, BsBarChart, BsBoxSeam, BsCurrencyDollar, BsShield, BsChatLeft, BsCashCoin, BsXOctagonFill } from 'react-icons/bs';
@@ -22,6 +23,46 @@ import product5 from './product5.jpg';
 import product6 from './product6.jpg';
 import product7 from './product7.jpg';
 //import product8 from './product8.jpg';
+
+export const ColumnsTransations = [
+{
+  Header: 'Id',
+  accessor:'id',
+},
+{
+  Header: 'Amount',
+  accessor:'amount',
+},
+{
+  Header: 'Title',
+  accessor:'title',
+},
+{
+  Header: 'Category',
+  accessor:'category',
+},
+{
+  Header: 'Date',
+  accessor:'date',
+  Cell: ({ value}) => { return format(new Date (value), 'dd/mm/yyyy')}
+},
+{
+  Header: 'Type', //entrada ou saida
+  accessor:'type',
+},
+/*{
+  id:1,
+  icon: <BsCashCoin />,
+  amount: 'R$: 128,00 +',
+  title: 'Luiz ',
+  category: 'Fabrica',
+  desc: 'Entrada',
+  dat: '02/12/2021',
+  iconColor: 'rgb(0, 194, 146)',
+  iconBg: '#E5FAFB',
+  pcColor: 'green-600',
+},*/
+]   
 
 export const gridOrderImage = (props) => (
   <div>
