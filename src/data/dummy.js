@@ -44,7 +44,9 @@ export const ColumnsTransations = [
 {
   Header: 'Date',
   accessor:'date',
-  Cell: ({ value}) => { return format(new Date (value), 'dd/mm/yyyy')}
+  Cell: ({ value }) => {
+    return format(new Date(value), 'dd/MM/yyyy')
+}
 },
 {
   Header: 'Type', //entrada ou saida
@@ -63,6 +65,256 @@ export const ColumnsTransations = [
   pcColor: 'green-600',
 },*/
 ]   
+export const Transations =[
+  {
+    id:1,
+   amount:'R$: 80,00',
+   title:'Entrada Manha',
+   category: 'Padaria',
+   type: 'entrada',
+   date: '2022-12-02'
+ },
+  {
+     id:2,
+    amount:'R$: 128,00',
+    title:'Luiz',
+    category: 'fabrica',
+    type: 'entrada',
+    date: '2022-12-02'
+  },
+  {
+    id:3,
+   amount:'R$: 95,00',
+   title:'Sony',
+   category: 'Padaria',
+   type: 'Saida',
+   date: '2022-12-02'
+ },
+ {
+  id:4,
+ amount:'R$: 150,00',
+ title:'Entrada Tarde',
+ category: 'Padaria',
+ type: 'entrada',
+ date: '2022-12-02'
+},
+{
+ id:5,
+amount:'R$: 70,00',
+title:'Entrada Manha',
+category: 'Padaria',
+type: 'entrada',
+date: '2022-12-03'
+},
+{
+  id:6,
+ amount:'R$: 128,00',
+ title:'Sony',
+ category: 'Padaria',
+ type: 'Saida',
+ date: '2022-12-03'
+},
+{
+ id:7,
+amount:'R$: 55,00',
+title:'Sony Bolo 10',
+category: 'Fabrica',
+type: 'Entrada',
+date: '2022-12-03'
+},
+{
+  id:8,
+ amount:'R$: 140,00',
+ title:'Entrada Tarde',
+ category: 'Padaria',
+ type: 'entrada',
+ date: '2022-12-03'
+},
+{
+  id:9,
+ amount:'R$: 80,00',
+ title:'Entrada Manha',
+ category: 'Padaria',
+ type: 'entrada',
+ date: '2022-12-04'
+ },
+ {
+   id:10,
+  amount:'R$: 95,00',
+  title:'Sony',
+  category: 'Padaria',
+  type: 'Saida',
+  date: '2022-12-04'
+ },
+ {
+  id:11,
+ amount:'R$: 55,00',
+ title:'Queijo',
+ category: 'Padaria',
+ type: 'Saida',
+ date: '2022-12-04'
+ },
+ {
+   id:12,
+  amount:'R$: 130,00',
+  title:'Entrada Tarde',
+  category: 'Padaria',
+  type: 'entrada',
+  date: '2022-12-04'
+ },
+ {
+  id:13,
+ amount:'R$: 70,00',
+ title:'Entrada Manha',
+ category: 'Padaria',
+ type: 'entrada',
+ date: '2022-12-05'
+ },
+ {
+   id:14,
+  amount:'R$: 128,00',
+  title:'Sony',
+  category: 'Padaria',
+  type: 'Saida',
+  date: '2022-12-05'
+ },
+ {
+  id:15,
+ amount:'R$: 55,00',
+ title:'Sony Bolo 10',
+ category: 'Fabrica',
+ type: 'Entrada',
+ date: '2022-12-05'
+ },
+ {
+   id:16,
+  amount:'R$: 140,00',
+  title:'Entrada Tarde',
+  category: 'Padaria',
+  type: 'entrada',
+  date: '2022-12-05'
+ },
+ {
+  id:17,
+ amount:'R$: 70,00',
+ title:'Entrada Manha',
+ category: 'Padaria',
+ type: 'entrada',
+ date: '2022-12-06'
+ },
+ {
+   id:18,
+  amount:'R$: 95,00',
+  title:'Sony',
+  category: 'Padaria',
+  type: 'Saida',
+  date: '2022-12-06'
+ },
+ {
+  id:19,
+ amount:'R$: 55,00',
+ title:'Luiz',
+ category: 'Fabrica',
+ type: 'Entrada',
+ date: '2022-12-06'
+ },
+ {
+   id:20,
+  amount:'R$: 140,00',
+  title:'Entrada Tarde',
+  category: 'Padaria',
+  type: 'entrada',
+  date: '2022-12-06'
+ },
+ {
+  id:21,
+ amount:'R$: 95,00',
+ title:'Sony',
+ category: 'Padaria',
+ type: 'Saida',
+ date: '2022-12-04'
+},
+{
+ id:22,
+amount:'R$: 55,00',
+title:'Queijo',
+category: 'Padaria',
+type: 'Saida',
+date: '2022-12-04'
+},
+{
+  id:23,
+ amount:'R$: 130,00',
+ title:'Entrada Tarde',
+ category: 'Padaria',
+ type: 'entrada',
+ date: '2022-12-04'
+},
+{
+ id:24,
+amount:'R$: 70,00',
+title:'Entrada Manha',
+category: 'Padaria',
+type: 'entrada',
+date: '2022-12-05'
+},
+{
+  id:25,
+ amount:'R$: 128,00',
+ title:'Sony',
+ category: 'Padaria',
+ type: 'Saida',
+ date: '2022-12-05'
+},
+{
+ id:26,
+amount:'R$: 55,00',
+title:'Sony Bolo 10',
+category: 'Fabrica',
+type: 'Entrada',
+date: '2022-12-05'
+},
+{
+  id:27,
+ amount:'R$: 140,00',
+ title:'Entrada Tarde',
+ category: 'Padaria',
+ type: 'entrada',
+ date: '2022-12-05'
+},
+{
+ id:28,
+amount:'R$: 70,00',
+title:'Entrada Manha',
+category: 'Padaria',
+type: 'entrada',
+date: '2022-12-06'
+},
+{
+  id:29,
+ amount:'R$: 95,00',
+ title:'Sony',
+ category: 'Padaria',
+ type: 'Saida',
+ date: '2022-12-06'
+},
+{
+ id:30,
+amount:'R$: 55,00',
+title:'Luiz',
+category: 'Fabrica',
+type: 'Entrada',
+date: '2022-12-06'
+},
+{
+  id:31,
+ amount:'R$: 140,00',
+ title:'Entrada Tarde',
+ category: 'Padaria',
+ type: 'entrada',
+ date: '2022-12-06'
+},
+]
 
 export const gridOrderImage = (props) => (
   <div>
