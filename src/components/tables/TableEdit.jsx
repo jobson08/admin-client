@@ -1,7 +1,7 @@
 
 import React, {useMemo} from 'react';
 import { useTable } from 'react-table';
-import { ColumnsTransations, Transations} from '../data/dummy';
+import { ColumnsTransations, Transations} from '../../data/dummy';
 
 const TableEdit = () => {
     
