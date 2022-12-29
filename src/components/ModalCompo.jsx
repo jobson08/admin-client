@@ -1,6 +1,7 @@
 import React from 'react'
 
-const ModalTable = ({isVisible, onClose, children}) => {
+const ModalCompo
+ = ({isVisible, onClose, children}) => {
   if( !isVisible ) return null
   const handleClose = (e) =>{
     if( e.target.id ==='wrapper' ) onClose();
@@ -24,4 +25,4 @@ const ModalTable = ({isVisible, onClose, children}) => {
   )
 }
 
-export default ModalTable
+export default ModalCompo
