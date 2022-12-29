@@ -53,6 +53,8 @@ export const ColumnsTransations = [
   accessor:'type',
 },
 
+
+
 /*{
   id:1,
   icon: <BsCashCoin />,

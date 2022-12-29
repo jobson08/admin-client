@@ -6,8 +6,7 @@ import { useTable, usePagination } from 'react-table';
 import { ColumnsTransations, Transations} from '../data/dummy';
 import { useStateContext } from '../contexts/ ContextProvider';
 import { AiOutlineLeft, AiOutlineRight, AiOutlineVerticalLeft, AiOutlineVerticalRight, AiOutlineEdit, AiOutlineDelete } from 'react-icons/ai';
-
-
+import { Link } from 'react-router-dom';
 
 const Transactions = () => {
     const { currentColor} = useStateContext();
@@ -73,14 +72,14 @@ const Transactions = () => {
                     return(
                 <tr {...row.getRowProps()} className="bg-white uppercase border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                     {row.cells.map(cell => {
-                        return<td {...cell.getCellProps()} className="py-3 px-6">{cell.render('Cell')} </td>
-                })}
+                        return<td {...cell.getCellProps()} className="py-3 px-6">{cell.render('Cell')}  </td>
+               })}
                  <td className="py-4 px-3">
-                    <button className="text-blue-600 md:text-xl dark:text-blue-500 hover:underline"><AiOutlineEdit /> </button>
+                    <Link className="text-blue-600 md:text-xl dark:text-blue-500 hover:underline"><AiOutlineEdit /> </Link>
                     
                 </td>
                 <td className="py-4 px-3">
-                    <button className=" text-red-600 md:text-xl dark:text-red-500 hover:underline"> <AiOutlineDelete /> </button>
+                    <Link className=" text-red-600 md:text-xl dark:text-red-500 hover:underline"> <AiOutlineDelete /> </Link>
                 </td>
             </tr> 
                 )

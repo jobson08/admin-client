@@ -6,7 +6,7 @@ const Header = ({ category, title }) => {
       <p className='"font-bold text-xl dark:text-gray-200'>
         {category}
       </p>
-      <p className='text-3x1 font-extrabold tracking-tight dark:text-gray-200'>{title}</p>
+      <p className='text-2xl font-extrabold tracking-tight dark:text-gray-200 text-center'>{title}</p>
     </div>
   )
 }
