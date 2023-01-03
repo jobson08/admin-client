@@ -71,7 +71,7 @@ export const ColumnsTransations = [
 export const Transations =[
   {
     id:1,
-   amount:'R$: 80,00',
+   amount: -80.00,
    title:'Entrada Manha',
    category: 'Padaria',
    type: 'entrada',
@@ -79,7 +79,7 @@ export const Transations =[
  },
   {
      id:2,
-    amount:'R$: 128,00',
+    amount:120.00,
     title:'Luiz',
     category: 'fabrica',
     type: 'entrada',
@@ -87,7 +87,7 @@ export const Transations =[
   },
   {
     id:3,
-   amount:'R$: 95,00',
+   amount: 95.00,
    title:'Sony',
    category: 'Padaria',
    type: 'Saida',
@@ -95,7 +95,7 @@ export const Transations =[
  },
  {
   id:4,
- amount:'R$: 150,00',
+ amount:150.00,
  title:'Entrada Tarde',
  category: 'Padaria',
  type: 'entrada',
@@ -103,7 +103,7 @@ export const Transations =[
 },
 {
  id:5,
-amount:'R$: 70,00',
+amount:70.00,
 title:'Entrada Manha',
 category: 'Padaria',
 type: 'entrada',
@@ -111,7 +111,7 @@ date: '2022-12-03'
 },
 {
   id:6,
- amount:'R$: 128,00',
+ amount: -128.00,
  title:'Sony',
  category: 'Padaria',
  type: 'Saida',
@@ -119,7 +119,7 @@ date: '2022-12-03'
 },
 {
  id:7,
-amount:'R$: 55,00',
+amount:55.00,
 title:'Sony Bolo 10',
 category: 'Fabrica',
 type: 'Entrada',
@@ -127,7 +127,7 @@ date: '2022-12-03'
 },
 {
   id:8,
- amount:'R$: 140,00',
+ amount:140.00,
  title:'Entrada Tarde',
  category: 'Padaria',
  type: 'entrada',
@@ -135,7 +135,7 @@ date: '2022-12-03'
 },
 {
   id:9,
- amount:'R$: 80,00',
+ amount:80.00,
  title:'Entrada Manha',
  category: 'Padaria',
  type: 'entrada',
@@ -143,7 +143,7 @@ date: '2022-12-03'
  },
  {
    id:10,
-  amount:'R$: 95,00',
+  amount:-95.00,
   title:'Sony',
   category: 'Padaria',
   type: 'Saida',
@@ -151,7 +151,7 @@ date: '2022-12-03'
  },
  {
   id:11,
- amount:'R$: 55,00',
+ amount:-250.00,
  title:'Queijo',
  category: 'Padaria',
  type: 'Saida',
@@ -159,7 +159,7 @@ date: '2022-12-03'
  },
  {
    id:12,
-  amount:'R$: 130,00',
+  amount:130.00,
   title:'Entrada Tarde',
   category: 'Padaria',
   type: 'entrada',
@@ -167,7 +167,7 @@ date: '2022-12-03'
  },
  {
   id:13,
- amount:'R$: 70,00',
+ amount:70.00,
  title:'Entrada Manha',
  category: 'Padaria',
  type: 'entrada',
@@ -175,7 +175,7 @@ date: '2022-12-03'
  },
  {
    id:14,
-  amount:'R$: 128,00',
+  amount:-128.00,
   title:'Sony',
   category: 'Padaria',
   type: 'Saida',
@@ -183,7 +183,7 @@ date: '2022-12-03'
  },
  {
   id:15,
- amount:'R$: 55,00',
+ amount:55.00,
  title:'Sony Bolo 10',
  category: 'Fabrica',
  type: 'Entrada',
@@ -191,7 +191,7 @@ date: '2022-12-03'
  },
  {
    id:16,
-  amount:'R$: 140,00',
+  amount:140.00,
   title:'Entrada Tarde',
   category: 'Padaria',
   type: 'entrada',
@@ -199,7 +199,7 @@ date: '2022-12-03'
  },
  {
   id:17,
- amount:'R$: 70,00',
+ amount:70.00,
  title:'Entrada Manha',
  category: 'Padaria',
  type: 'entrada',
@@ -207,7 +207,7 @@ date: '2022-12-03'
  },
  {
    id:18,
-  amount:'R$: 95,00',
+  amount:-95.00,
   title:'Sony',
   category: 'Padaria',
   type: 'Saida',
@@ -215,7 +215,7 @@ date: '2022-12-03'
  },
  {
   id:19,
- amount:'R$: 55,00',
+ amount:55.00,
  title:'Luiz',
  category: 'Fabrica',
  type: 'Entrada',
@@ -223,7 +223,7 @@ date: '2022-12-03'
  },
  {
    id:20,
-  amount:'R$: 140,00',
+  amount:140.00,
   title:'Entrada Tarde',
   category: 'Padaria',
   type: 'entrada',
@@ -231,7 +231,7 @@ date: '2022-12-03'
  },
  {
   id:21,
- amount:'R$: 95,00',
+ amount:-95.00,
  title:'Sony',
  category: 'Padaria',
  type: 'Saida',
@@ -239,7 +239,7 @@ date: '2022-12-03'
 },
 {
  id:22,
-amount:'R$: 55,00',
+amount:-55.00,
 title:'Queijo',
 category: 'Padaria',
 type: 'Saida',
@@ -247,7 +247,7 @@ date: '2022-12-04'
 },
 {
   id:23,
- amount:'R$: 130,00',
+ amount:130.00,
  title:'Entrada Tarde',
  category: 'Padaria',
  type: 'entrada',
@@ -255,7 +255,7 @@ date: '2022-12-04'
 },
 {
  id:24,
-amount:'R$: 70,00',
+amount:70.00,
 title:'Entrada Manha',
 category: 'Padaria',
 type: 'entrada',
@@ -263,7 +263,7 @@ date: '2022-12-05'
 },
 {
   id:25,
- amount:'R$: 128,00',
+ amount:-120.00,
  title:'Sony',
  category: 'Padaria',
  type: 'Saida',
@@ -271,7 +271,7 @@ date: '2022-12-05'
 },
 {
  id:26,
-amount:'R$: 55,00',
+amount:55.00,
 title:'Sony Bolo 10',
 category: 'Fabrica',
 type: 'Entrada',
@@ -279,7 +279,7 @@ date: '2022-12-05'
 },
 {
   id:27,
- amount:'R$: 140,00',
+ amount:140.00,
  title:'Entrada Tarde',
  category: 'Padaria',
  type: 'entrada',
@@ -287,7 +287,7 @@ date: '2022-12-05'
 },
 {
  id:28,
-amount:'R$: 70,00',
+amount:70.00,
 title:'Entrada Manha',
 category: 'Padaria',
 type: 'entrada',
@@ -295,7 +295,7 @@ date: '2022-12-06'
 },
 {
   id:29,
- amount:'R$: 95,00',
+ amount:-95.00,
  title:'Sony',
  category: 'Padaria',
  type: 'Saida',
@@ -303,7 +303,7 @@ date: '2022-12-06'
 },
 {
  id:30,
-amount:'R$: 55,00',
+amount:55.00,
 title:'Luiz',
 category: 'Fabrica',
 type: 'Entrada',
@@ -311,7 +311,7 @@ date: '2022-12-06'
 },
 {
   id:31,
- amount:'R$: 140,00',
+ amount:140.00,
  title:'Entrada Tarde',
  category: 'Padaria',
  type: 'entrada',
@@ -995,7 +995,7 @@ export const earningData = [
     title: 'Products',
     iconColor: 'rgb(255, 244, 229)',
     iconBg: 'rgb(254, 201, 15)',
-    pcColor: 'green-600',
+    pcColor: 'blue-600',
   },
   {
     icon: <FiBarChart />,
@@ -1004,7 +1004,7 @@ export const earningData = [
     title: 'Sales',
     iconColor: 'rgb(228, 106, 118)',
     iconBg: 'rgb(255, 244, 229)',
-    pcColor: 'green-600',
+    pcColor: 'blue-600',
   },
   {
     icon: <HiOutlineRefresh />,
@@ -1021,14 +1021,14 @@ export const recentTransactionsData = [
   {
     id:1,
     icon: <BsCashCoin />,
-    amount: 'R$: 128,00 +',
+    amount: 'R$: 128,00 ',
     title: 'Luiz ',
     category: 'Fabrica',
     desc: 'Entrada',
     dat: '02/12/2021',
     iconColor: 'rgb(0, 194, 146)',
     iconBg: '#E5FAFB',
-    pcColor: 'green-600',
+    pcColor: 'blue-500',
   },
   {
     id:2,
@@ -1040,31 +1040,31 @@ export const recentTransactionsData = [
     dat: '01/12/2021',
     iconColor: '#EC2300',
     iconBg: '#E5FAFB',
-    pcColor: 'red-600',
+    pcColor: 'red-500',
   },
   {
     id:3,
     icon: <BsCashCoin />,
-    amount: 'R$: 72,00 +',
+    amount: 'R$: 72,00 ',
     title: 'Sony',
     category: 'Fabrica',
     desc: 'Entrada',
     dat: '01/12/2021',
     iconColor: 'rgb(0, 194, 146)',
     iconBg: '#E5FAFB',
-    pcColor: 'green-600',
+    pcColor: 'blue-500',
   },
   {
     id:4,
     icon: <BsCashCoin />,
-    amount: 'R$: 155,00 +',
+    amount: 'R$: 155,00 ',
     title: 'valor tarde ',
     category: 'Padaria',
     desc: 'Entrada',
     dat: '01/12/2021',
     iconColor: 'rgb(0, 194, 146)',
     iconBg: '#E5FAFB',
-    pcColor: 'green-600',
+    pcColor: 'blue-500',
   },
   {
     id:5,
@@ -1076,15 +1076,39 @@ export const recentTransactionsData = [
     dat: '01/12/2021',
     iconColor: '#EC2300',
     iconBg: '#E5FAFB',
-    pcColor: 'red-600',
+    pcColor: 'red-500',
   },
   {
     id:6,
     icon: <BsCashCoin />,
-    amount: 'R$: 80,00 +',
+    amount: 'R$: 80,00 ',
     title: 'valor manha ',
     category: 'Padaria',
     desc: 'Entrada',
+    dat: '01/12/2021',
+    iconColor: 'rgb(0, 194, 146)',
+    iconBg: '#E5FAFB',
+    pcColor: 'blue-500',
+  },
+  {
+    id:7,
+    icon: <BsCashCoin />,
+    amount: 'R$: 95,00 -',
+    title: 'Sony ',
+    category: 'Padaria',
+    desc: 'Saida',
+    dat: '01/12/2021',
+    iconColor: 'rgb(0, 194, 146)',
+    iconBg: '#E5FAFB',
+    pcColor: 'red-500',
+  },
+  {
+    id:8,
+    icon: <BsCashCoin />,
+    amount: 'R$: 95,00 -',
+    title: 'Jak',
+    category: 'Despesa',
+    desc: 'Transferência',
     dat: '01/12/2021',
     iconColor: 'rgb(0, 194, 146)',
     iconBg: '#E5FAFB',
