@@ -1,7 +1,7 @@
 /* eslint-disable no-whitespace-before-property */
 import React, { useState } from 'react'
 //import {GridComponent, ColumnsDirective, ColumnDirective, Resize, Sort, ContextMenu, Filter, Page, ExcelExport, PdfExport, Edit, Inject } from '@syncfusion/ej2-react-grids'
-import {  Transations } from '../data/dummy'
+import {  Transations, recentTransactionsData } from '../data/dummy'
 import { Header, ModalCompo} from '../components/Expor';
 import { AiOutlineEdit, AiOutlineDelete } from 'react-icons/ai';
 import { Tab } from '@headlessui/react';
@@ -12,6 +12,7 @@ const Orders = () => {
  //const editing = { allowDeleting: true, allowEditing: true };
  const [showModalAdd, setShowModalAdd] = useState( false );
  const [showModalEdit, setShowModalEdit] = useState( false );
+
   return (
   <>
     <div className="m-2 md:m-10 mt-24 p-2 md:p-10 bg-white dark:bg-secondary-dark-bg rounded-3xl">
@@ -55,14 +56,14 @@ const Orders = () => {
             </tr>
         </thead>
         <tbody>
-            {Transations.map((Transations,index)=>(
+            {recentTransactionsData.map((recentTransactionsData,index)=>(
              <tr  key= {index} className="bg-white uppercase border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                 <th className="py-3 px-6" scope='row'>{index + 1}</th>
-                <td className="py-3 px-6">{Transations.amount}</td>
-                <td className="py-3 px-6">{Transations.title}</td>
-                <td className="py-3 px-6">{Transations.category}</td>
-                <td className="py-3 px-6">{Transations.type}</td>
-                <td className="py-3 px-6">{Transations.date}</td>
+                <td className={`py-3 px-6 text-${recentTransactionsData.pcColor}`}>{recentTransactionsData.amount}</td>
+                <td className={`py-3 px-6 text-${recentTransactionsData.pcColor}`}>{recentTransactionsData.title}</td>
+                <td className={`py-3 px-6 text-${recentTransactionsData.pcColor}`}>{recentTransactionsData.category}</td>
+                <td className={`py-3 px-6 text-${recentTransactionsData.pcColor}`}>{recentTransactionsData.desc}</td>
+                <td className={`py-3 px-6 text-${recentTransactionsData.pcColor}`}>{recentTransactionsData.dat}</td>
                 <td className="py-4 px-3">
                     <button className="text-blue-600 md:text-xl dark:text-blue-500 hover:underline" 
                     onClick={() => setShowModalEdit(true)}><AiOutlineEdit /> </button>
@@ -134,19 +135,19 @@ const Orders = () => {
           <div className="relative mb-2">
           <RiCheckboxCircleLine className='absolute  text-blue-500 top-1/2 -translate-y-1/2 left-2'/>
           <select className="py-2 pl-8 pr-4 w-full outline-none rounded-lg dark:text-gray-500">
-                <option value="Receita">Padaria</option>
-                <option value="Despesa">Fabrica</option>
-                <option value="Poupança">Despesa pessoal</option>
+                <option value="1">Padaria</option>
+                <option value="2">Fabrica</option>
+                <option value="3">Despesa pessoal</option>
              </select>     
           </div>
           <label htmlFor="conta">Conta</label>
           <div className="relative mb-2">
           <RiContactsBookLine className='absolute  text-blue-500 top-1/2 -translate-y-1/2 left-2'/>
           <select className="py-2 pl-8 pr-4 w-full outline-none rounded-lg dark:text-gray-500">
-                <option value="Receita">Carteira</option>
-                <option value="Despesa">Cartão de credito</option>
-                <option value="Poupança">Conta corrente</option>
-                <option value="Poupança">Poupança</option>
+                <option value="1">Carteira</option>
+                <option value="2">Cartão de credito</option>
+                <option value="3">Conta corrente</option>
+                <option value="4">Poupança</option>
              </select>     
           </div>
           <div className="w-full max-w-md mx-auto flex items-center justify-between mb-8">
@@ -198,20 +199,20 @@ const Orders = () => {
           <div className="relative mb-2">
           <RiCheckboxCircleLine className='absolute  text-red-500 top-1/2 -translate-y-1/2 left-2'/>
           <select className="py-2 pl-8 pr-4 w-full outline-none rounded-lg dark:text-gray-500">
-                <option value="Receita">Padaria</option>
-                <option value="Despesa">Fabrica</option>
-                <option value="Poupança">Despesa pessoal</option>
-             </select>     
+                <option value="1">Padaria</option>
+                <option value="2">Fabrica</option>
+                <option value="3">Despesa pessoal</option>
+             </select>  
           </div>
           <label htmlFor="conta">Conta</label>
           <div className="relative mb-2">
           <RiContactsBookLine className='absolute  text-red-500 top-1/2 -translate-y-1/2 left-2'/>
           <select className="py-2 pl-8 pr-4 w-full outline-none rounded-lg dark:text-gray-500">
-                <option value="Receita">Carteira</option>
-                <option value="Despesa">Cartão de credito</option>
-                <option value="Poupança">Conta corrente</option>
-                <option value="Poupança">Poupança</option>
-             </select>     
+                <option value="1">Carteira</option>
+                <option value="2">Cartão de credito</option>
+                <option value="3">Conta corrente</option>
+                <option value="4">Poupança</option>
+             </select>       
           </div>
           <div className="w-full max-w-md mx-auto flex items-center justify-between  mb-8">
             <div className="flex items-center gap-2">
@@ -261,19 +262,19 @@ const Orders = () => {
           <div className="relative mb-2">
           <RiCheckboxCircleLine className='absolute  text-green-500 top-1/2 -translate-y-1/2 left-2'/>
           <select className="py-2 pl-8 pr-4 w-full outline-none rounded-lg dark:text-gray-500">
-                <option value="Receita">Padaria</option>
-                <option value="Despesa">Fabrica</option>
-                <option value="Poupança">Despesa pessoal</option>
-             </select>     
+                <option value="1">Padaria</option>
+                <option value="2">Fabrica</option>
+                <option value="3">Despesa pessoal</option>
+             </select>  
           </div>
           <label htmlFor="conta">Conta</label>
           <div className="relative mb-2">
           <RiContactsBookLine className='absolute  text-green-500 top-1/2 -translate-y-1/2 left-2'/>
           <select className="py-2 pl-8 pr-4 w-full outline-none rounded-lg dark:text-gray-500">
-                <option value="Receita">Carteira</option>
-                <option value="Despesa">Cartão de credito</option>
-                <option value="Poupança">Conta corrente</option>
-                <option value="Poupança">Poupança</option>
+                <option value="1">Carteira</option>
+                <option value="2">Cartão de credito</option>
+                <option value="3">Conta corrente</option>
+                <option value="4">Poupança</option>
              </select>     
           </div>
           <div className="w-full max-w-md mx-auto flex items-center justify-between mb-8">
@@ -312,11 +313,11 @@ const Orders = () => {
               className="py-2 pl-8 pr-4 w-full outline-none rounded-lg"
               placeholder="Valor"
               />
-              <select className="py-2 pl-8 pr-4 w-full outline-none rounded-lg dark:text-gray-500">
-                <option value="Receita">Receita</option>
-                <option value="Despesa">Despesa</option>
-                <option value="Poupança">Transferência</option>
-             </select>
+             <select className="py-2 pl-8 pr-4 w-full outline-none rounded-lg dark:text-gray-500">
+                <option value="1">Padaria</option>
+                <option value="2">Fabrica</option>
+                <option value="3">Despesa pessoal</option>
+             </select>  
           </div>
           <div className="relative mb-4">
           <RiCalendarEventLine  className='absolute  text-blue-500 top-1/2 -translate-y-1/2 left-2'/>
@@ -368,7 +369,6 @@ const Orders = () => {
         </form>
       </div>
     </ModalCompo>
-
     </>
   )
 }
