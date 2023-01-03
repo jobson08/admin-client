@@ -33,6 +33,9 @@ const Orders = () => {
                      ID
                 </th>
                 <th scope="col" className="py-3 px-6">
+                     Icone
+                </th>
+                <th scope="col" className="py-3 px-6">
                      AMOUNT
                 </th>
                 <th scope="col" className="py-3 px-6">
@@ -59,6 +62,7 @@ const Orders = () => {
             {recentTransactionsData.map((recentTransactionsData,index)=>(
              <tr  key= {index} className="bg-white uppercase border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                 <th className="py-3 px-6" scope='row'>{index + 1}</th>
+                <td className='py-3 px-6' style={{color: recentTransactionsData.iconColor,}}>{recentTransactionsData.icon}</td>
                 <td className={`py-3 px-6 text-${recentTransactionsData.pcColor}`}>{recentTransactionsData.amount}</td>
                 <td className={`py-3 px-6 text-${recentTransactionsData.pcColor}`}>{recentTransactionsData.title}</td>
                 <td className={`py-3 px-6 text-${recentTransactionsData.pcColor}`}>{recentTransactionsData.category}</td>
