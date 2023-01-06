@@ -1,7 +1,7 @@
 /* eslint-disable no-whitespace-before-property */
 import React, { useState } from 'react'
 //import {GridComponent, ColumnsDirective, ColumnDirective, Resize, Sort, ContextMenu, Filter, Page, ExcelExport, PdfExport, Edit, Inject } from '@syncfusion/ej2-react-grids'
-import {  Transations, recentTransactionsData } from '../data/dummy'
+import { recentTransactionsData, Categories , SubCategory } from '../data/dummy'
 import { Header, ModalCompo} from '../components/Expor';
 import { AiOutlineEdit, AiOutlineDelete } from 'react-icons/ai';
 import { Tab } from '@headlessui/react';
@@ -12,18 +12,20 @@ const Orders = () => {
  //const editing = { allowDeleting: true, allowEditing: true };
  const [showModalAdd, setShowModalAdd] = useState( false );
  const [showModalEdit, setShowModalEdit] = useState( false );
+ 
+ const [selectCategory, setSelectCategory] = useState('')
+ console.log(selectCategory)
 
   return (
   <>
     <div className="m-2 md:m-10 mt-24 p-2 md:p-10 bg-white dark:bg-secondary-dark-bg rounded-3xl">
       <Header title="Orders" />
+
       <div className="mt-1 flex justify-end ">
       <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounde"
       onClick={() => setShowModalAdd(true)}
-      >
-        Adicionar
-      </button>
-          </div>   
+      >Adicionar </button>
+   </div>   
       
       <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400 mt-2">
         <thead className="text-xs text-gray-700 uppercase dark:text-gray-400 bg-gray-50 dark:bg-gray-700 ">
@@ -68,7 +70,7 @@ const Orders = () => {
                 <td className={`py-3 px-6 text-${recentTransactionsData.pcColor}`}>{recentTransactionsData.category}</td>
                 <td className={`py-3 px-6 text-${recentTransactionsData.pcColor}`}>{recentTransactionsData.desc}</td>
                 <td className={`py-3 px-6 text-${recentTransactionsData.pcColor}`}>{recentTransactionsData.dat}</td>
-                <td className="py-4 px-3">
+                <td className="py-4 px-3"> 
                     <button className="text-blue-600 md:text-xl dark:text-blue-500 hover:underline" 
                     onClick={() => setShowModalEdit(true)}><AiOutlineEdit /> </button>
                 </td>
@@ -79,24 +81,8 @@ const Orders = () => {
             ))}
         </tbody>
     </table>
-
-    {/*  <GridComponent
-      id="gridcomp"
-      dataSource={ordersData}
-      allowPaging
-      allowSorting
-      allowExcelExport
-      allowPdfExport
-      contextMenuItems={contextMenuItems}
-      editSettings={editing}
-      >
-      <ColumnsDirective>
-          {ordersGrid.map((item, index) => <ColumnDirective key={index} {...item} />)}
-        </ColumnsDirective>
-        <Inject services={[Resize, Sort, ContextMenu, Filter, Page, ExcelExport, Edit, PdfExport]} />
-      </GridComponent>*/}
+ </div>
  
-    </div>
 {/*Modal Adicionar  */}
     <ModalCompo isVisible ={showModalAdd} onClose ={() => setShowModalAdd(false)}>
     <Header title="Adicionar" />
@@ -110,7 +96,7 @@ const Orders = () => {
       <Tab.Panels>
       <Tab.Panel className="rounded-xl bg-blue-800 p-3">
         <div className="w-full mb-1">
-        <form>
+        <form id= 'entry'>
         <div className='p-5 pt-1'>
         <div className="relative mb-2 flex">
           <RiCoinsFill className='absolute  text-blue-500 top-1/2 -translate-y-1/2 left-2'/>
@@ -136,18 +122,35 @@ const Orders = () => {
             />
           </div>
           <label htmlFor="category">Categoria</label>
-          <div className="relative mb-2">
+          <div className="rrelative mb-2 flex">
           <RiCheckboxCircleLine className='absolute  text-blue-500 top-1/2 -translate-y-1/2 left-2'/>
-          <select className="py-2 pl-8 pr-4 w-full outline-none rounded-lg dark:text-gray-500">
-                <option value="1">Padaria</option>
-                <option value="2">Fabrica</option>
-                <option value="3">Despesa pessoal</option>
-             </select>     
+        
+          <select onChange={(e) =>{setSelectCategory(e.target.value)}}
+           id="categoryEntry" name="categoryEntry"  
+           className="py-2 pl-8 pr-4 w-full outline-none rounded-lg dark:text-gray-500">
+            <option value="">Selecione categoria</option>
+            {
+              Categories.map(category => {
+                const{id,title}=category
+               return (<option  key={id}>{title}</option>)
+              })  
+            }
+           </select>   
+           <RiCheckboxCircleLine className='absolute  text-blue-500 top-1/2 -translate-y-1/2 left-2'/>
+           {selectCategory && <select id="subCategoryEntry" name="subCategoryEntry" className="py-2 pl-8 pr-4 w-full outline-none rounded-lg dark:text-gray-500">
+              {
+                SubCategory[selectCategory].map(subCatego =>{
+                  const {id, name}=subCatego
+                  return <option key={id}>{name}</option>
+                })
+              }
+             </select> }     
           </div>
+            
           <label htmlFor="conta">Conta</label>
           <div className="relative mb-2">
           <RiContactsBookLine className='absolute  text-blue-500 top-1/2 -translate-y-1/2 left-2'/>
-          <select className="py-2 pl-8 pr-4 w-full outline-none rounded-lg dark:text-gray-500">
+          <select id="countEntry" name="conuntEntry" className="py-2 pl-8 pr-4 w-full outline-none rounded-lg dark:text-gray-500">
                 <option value="1">Carteira</option>
                 <option value="2">Cartão de credito</option>
                 <option value="3">Conta corrente</option>
@@ -175,7 +178,7 @@ const Orders = () => {
 
         <Tab.Panel  className="rounded-xl bg-red-800 p-3">
         <div className="w-full mb-1">
-        <form>
+        <form id='expense' >
         <div className='p-5 pt-1'>
         <div className="relative mb-2 flex">
           <RiCoinsFill className='absolute  text-red-500 top-1/2 -translate-y-1/2 left-2'/>
@@ -200,13 +203,17 @@ const Orders = () => {
             />
           </div>
           <label htmlFor="category">Categoria</label>
-          <div className="relative mb-2">
+          <div className="rrelative mb-2 flex">
           <RiCheckboxCircleLine className='absolute  text-red-500 top-1/2 -translate-y-1/2 left-2'/>
-          <select className="py-2 pl-8 pr-4 w-full outline-none rounded-lg dark:text-gray-500">
+          <select id ="category"className="py-2 pl-8 pr-4 w-full outline-none rounded-lg dark:text-gray-500">
                 <option value="1">Padaria</option>
                 <option value="2">Fabrica</option>
-                <option value="3">Despesa pessoal</option>
-             </select>  
+             </select>   
+           <RiCheckboxCircleLine className='absolute  text-red-500 top-1/2 -translate-y-1/2 left-2'/>
+          <select className="py-2 pl-8 pr-4 w-full outline-none rounded-lg dark:text-gray-500">
+                <option value="1">Pão</option>
+                <option value="2">Queijo</option>
+             </select>      
           </div>
           <label htmlFor="conta">Conta</label>
           <div className="relative mb-2">
@@ -239,7 +246,7 @@ const Orders = () => {
 
         <Tab.Panel className="rounded-xl bg-green-800 p-3">
         <div className="w-full mb-1">
-        <form>
+        <form id='transfer'>
         <div className='p-5 pt-1'>
         <div className="relative mb-2 flex">
           <RiCoinsFill className='absolute  text-green-500 top-1/2 -translate-y-1/2 left-2'/>

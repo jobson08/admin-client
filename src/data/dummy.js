@@ -24,6 +24,60 @@ import product6 from './product6.jpg';
 import product7 from './product7.jpg';
 //import product8 from './product8.jpg';
 
+export const Categories = [
+  {
+    id:1,
+    title:'Padaria',
+    color:"rgb(0, 128, 255)",
+    expense:true
+  },
+  {
+    id:2,
+    title:'Fabrica',
+    color:"rgb(0, 128, 255)",
+    expense:true
+  },
+]
+
+export const SubCategory = {
+  Padaria:[ 
+  {
+    id:1,
+    name:'Entrada Manha'
+  },
+   {id:2,
+    name:'Entrada Tarde'
+  },
+  {
+      id:3,
+      name:'Sony'
+  }, 
+  {
+    id:4,
+    name:'Bolos'
+  },
+],
+  Fabrica:[ 
+
+    {
+      id:1,
+      name:'Loja'
+    },
+     {id:2,
+      name:'Sony'
+    },
+    {
+        id:3,
+        name:'Carlos'
+    }, 
+    {
+      id:4,
+      name:'Luiz'
+    },
+  
+ ]
+}
+
 export const ColumnsTransations = [
 {
   Header: 'Id',
@@ -52,21 +106,6 @@ export const ColumnsTransations = [
   Header: 'Type', //entrada ou saida
   accessor:'type',
 },
-
-
-
-/*{
-  id:1,
-  icon: <BsCashCoin />,
-  amount: 'R$: 128,00 +',
-  title: 'Luiz ',
-  category: 'Fabrica',
-  desc: 'Entrada',
-  dat: '02/12/2021',
-  iconColor: 'rgb(0, 194, 146)',
-  iconBg: '#E5FAFB',
-  pcColor: 'green-600',
-},*/
 ]   
 export const Transations =[
   {
