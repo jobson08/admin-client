@@ -77,6 +77,20 @@ export const SubCategory = {
   
  ]
 }
+export const acount = [
+{
+  id:1,
+  title:'Carteira'
+},
+{
+  id:2,
+  title:'Cartão credito'
+},
+{
+  id:3,
+  title:'Poupança'
+}
+]
 
 export const ColumnsTransations = [
 {
